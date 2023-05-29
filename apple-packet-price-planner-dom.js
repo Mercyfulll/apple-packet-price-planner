@@ -7,7 +7,8 @@ const packetsDesired = document.querySelector(".packetNumber1")
 const applePrice = document.querySelector(".applePrice")
 const packetPrice = document.querySelector(".packetPrice")
 const recommendedPrice = document.querySelector(".packetSold")
-const calculateButton = document.querySelector(".button")
+const calculateButton = document.querySelector(".calculate")
+const clearButton = document.querySelector(".clear")
 
 let applePlanner = applePacketPlanner()
 
@@ -35,4 +36,17 @@ calculateButton.addEventListener("click",function(){
     packetPrice.innerHTML = "R " + localStorage.getItem("Packet")
     recommendedPrice.innerHTML = "R " + localStorage.getItem("RecommendedProfit")
 
+})
+
+clearButton.addEventListener("click",function(){
+    costPrice.value = ""
+    appleQuantity.value = ""
+    packetCreated.value = ""
+    profitPercentage.value = ""
+    packetsPossible.innerHTML = 0
+    packetsDesired.innerHTML = 0
+    applePrice.innerHTML = 0
+    packetPrice.innerHTML = 0
+    recommendedPrice.innerHTML = 0
+    localStorage.clear()
 })
